@@ -3,7 +3,7 @@
     ViewBag.Title = "AdminView";
 }
 
-<h2>Welcome @ViewBag.Name</h2>
+<h2>Welcome @ViewBag.FullName</h2>
 <div>
     @Html.ActionLink("Quản lý tuyến xe", "ListRoutes", "Admin", null, new { @class = "btn btn-primary custom-link" })
     @Html.ActionLink("Quản lý chuyến xe", "ListBuses", "Admin", null, new { @class = "btn btn-primary custom-link" })

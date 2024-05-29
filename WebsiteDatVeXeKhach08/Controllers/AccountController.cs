@@ -15,21 +15,17 @@ namespace WebsiteDatVeXeKhach08.Controllers
         }
         
         [HttpPost]
-        public ActionResult LogIn(FormCollection collection)
+        public ActionResult LogIn(string username, string password)
         {
-            var username = collection["Username"];
-            var password = collection["Password"];
-            var loggedInUser = db.Users.SingleOrDefault(u => u.Username == username && u.Password == password);
+            User loggedInUser = db.Users.SingleOrDefault(u => u.Username == username && u.Password == password);
             if (loggedInUser.RoleID == 1)
             {
-                ViewBag.Name = loggedInUser.FullName;
-                Session["UserID"] = loggedInUser.UserID;
+                Session["FullName"] = loggedInUser.FullName;
                 return RedirectToAction("AdminView");
             }
             else if (loggedInUser.RoleID == 2)
             {
-                ViewBag.Name = loggedInUser.FullName;
-                Session["UserID"] = loggedInUser.UserID;
+                Session["FullName"] = loggedInUser.FullName;
                 return RedirectToAction("CustomerView");
             }
             else
@@ -72,17 +68,19 @@ namespace WebsiteDatVeXeKhach08.Controllers
         }
         public ActionResult Logout()
         {
-            Session["UserID"] = null;
+            Session["FullName"] = null;
             Session.Clear();
             Session.Abandon();
             return RedirectToAction("Login");
         }
         public ActionResult AdminView()
         {
+            ViewBag.FullName = Session["FullName"];
             return View();
         }
         public ActionResult CustomerView()
         {
+            ViewBag.FullName = Session["FullName"];
             return View();
         }
     }

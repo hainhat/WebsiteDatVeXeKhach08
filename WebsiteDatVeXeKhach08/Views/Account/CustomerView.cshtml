@@ -3,7 +3,7 @@
     ViewBag.Title = "CustomerView";
 }
 
-<h2>Welcome @ViewBag.Name</h2>
+<h2>Welcome @ViewBag.FullName</h2>
 <div>
     @Html.ActionLink("Tìm kiếm chuyến xe theo ngày", "SearchBusByDate", "Customer", null, new { @class = "btn btn-primary custom-link" })
     @Html.ActionLink("Tìm kiếm tuyến xe theo ngày", "SearchRouteByDate", "Customer", null, new { @class = "btn btn-primary custom-link" })
