@@ -33,8 +33,6 @@ namespace WebsiteDatVeXeKhach08.Controllers
                 .Where(route => db.Buses.Any(bus => bus.RouteID == route.RouteID && DbFunctions.TruncateTime(bus.DepartureTime) == DbFunctions.TruncateTime(date) && bus.AvailableSeats > 0))
                 .OrderBy(route => route.RouteName)
                 .ToList();
-
-            // Truyền dữ liệu tìm kiếm vào ViewBag để hiển thị lại ngày tìm kiếm
             ViewBag.SearchDate = date;
             return View(availableRoutes);
         }
