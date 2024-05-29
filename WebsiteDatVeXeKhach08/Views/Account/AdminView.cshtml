@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "AdminView";
+}
+
+<h2>Welcome @ViewBag.Name</h2>
+<div>
+    @Html.ActionLink("Quản lý tuyến xe", "ListRoutes", "Admin", null, new { @class = "btn btn-primary custom-link" })
+    @Html.ActionLink("Quản lý chuyến xe", "ListBuses", "Admin", null, new { @class = "btn btn-primary custom-link" })
+    @Html.ActionLink("Quản lý khách hàng", "ListCustomers", "Admin", null, new { @class = "btn btn-primary custom-link" })
+    @Html.ActionLink("Quản lý đặt vé", "ListTickets", "Admin", null, new { @class = "btn btn-primary custom-link" })
+    @Html.ActionLink("Quản lý thanh toán", "ListPayment", "Admin", null, new { @class = "btn btn-primary custom-link" })
+    @Html.ActionLink("Thống kê", "ThongKe", "Admin", null, new { @class = "btn btn-primary custom-link" })
+    @Html.ActionLink("Đăng xuất", "Logout", null, new { @class = "btn btn-primary custom-link" })
+</div>
+<style>
+    .custom-link {
+        background-color: #3498db;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+        .custom-link:hover {
+            background-color: #2980b9;
+        }
+</style>

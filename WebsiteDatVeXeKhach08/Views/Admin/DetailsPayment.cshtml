@@ -1,0 +1,48 @@
+﻿@model WebsiteDatVeXeKhach08.Payment
+
+@{
+    ViewBag.Title = "DetailsPayment";
+}
+
+<h2>DetailsPayment</h2>
+
+<div>
+    <h4>Payment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TicketID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TicketID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaymentDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MethodID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MethodID)
+        </dd>
+        <dt>
+            <p>Amount</p>
+        </dt>
+
+        <dd>
+            <p>@ViewBag.Amount</p>
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PaymentID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

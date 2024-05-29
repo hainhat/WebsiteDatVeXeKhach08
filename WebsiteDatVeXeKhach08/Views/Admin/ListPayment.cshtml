@@ -1,0 +1,45 @@
+﻿@model IEnumerable<WebsiteDatVeXeKhach08.Payment>
+
+@{
+    ViewBag.Title = "ListPayment";
+}
+
+<h2>ListPayment</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreatePayment")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TicketID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaymentDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MethodID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TicketID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaymentDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaymentMethod.MethodName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditPayment", new { id=item.PaymentID }) |
+            @Html.ActionLink("Details", "DetailsPayment", new { id=item.PaymentID }) |
+            @Html.ActionLink("Delete", "DeletePayment", new { id=item.PaymentID })
+        </td>
+    </tr>
+}
+
+</table>

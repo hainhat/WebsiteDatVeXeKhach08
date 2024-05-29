@@ -1,0 +1,39 @@
+﻿@model IEnumerable<WebsiteDatVeXeKhach08.Route>
+
+@{
+    ViewBag.Title = "SearchRouteByDate";
+}
+
+<h2>Tìm kiếm tuyến xe còn trống theo ngày</h2>
+@using (Html.BeginForm("SearchRouteByDate", "Customer", FormMethod.Get))
+{
+    <input type="date" id="searchDate" name="searchDate" value="@ViewBag.SearchDate.ToString("dd/MM/yyyy")" class="form-control" />
+    <button type="submit" class="btn btn-primary">Search</button>
+}
+@if (Model.Any())
+{
+    <h3>Các tuyến còn trống @ViewBag.SearchDate.ToString("dd/MM/yyyy")</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Route Name</th>
+                <th>Start Location</th>
+                <th>End Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var route in Model)
+            {
+                <tr>
+                    <td>@route.RouteName</td>
+                    <td>@route.StartLocation</td>
+                    <td>@route.EndLocation</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h4>Không còn tuyến nào trống</h4>
+}

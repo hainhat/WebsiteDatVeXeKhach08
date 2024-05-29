@@ -1,0 +1,57 @@
+﻿@model IEnumerable<WebsiteDatVeXeKhach08.Ticket>
+
+@{
+    ViewBag.Title = "ListTickets";
+}
+
+<h2>ListTickets</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateTicket")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BusID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SeatNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookingDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StatusID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bus.BusNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SeatNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookingDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StatusID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditTicket", new { id=item.TicketID }) |
+            @Html.ActionLink("Details", "DetailsTicket", new { id=item.TicketID }) |
+            @Html.ActionLink("Delete", "DeleteTicket", new { id=item.TicketID })
+        </td>
+    </tr>
+}
+
+</table>

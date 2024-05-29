@@ -1,0 +1,44 @@
+﻿@model WebsiteDatVeXeKhach08.Models.TicketSalesStatistic
+@{
+    ViewBag.Title = "ThongKe";
+}
+
+<h2>ThongKe</h2>
+
+<h2>Thống kê vé đã bán</h2>
+@using (Html.BeginForm("ThongKe", "Admin", FormMethod.Get))
+{
+    <div>
+        <label>Chọn Tháng:</label>
+        @Html.TextBox("month", null, new { type = "number", min = "1", max = "12" })
+        <input type="submit" value="Thống Kê" />
+    </div>
+}
+@if (Model != null)
+{
+    <h3>Tháng @Model.Month/@Model.Year</h3>
+    <p>Tổng số vé đã bán: @Model.TotalTicketsSold</p>
+
+    <h4>Thống kê theo tuyến:</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Tuyến</th>
+                <th>Số Lượng Vé Đã Bán</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.RouteTicketSalesStatistics)
+            {
+                <tr>
+                    <td>@item.RouteName</td>
+                    <td>@item.TicketsSold</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h4>Không có vé nào được bán</h4>
+}

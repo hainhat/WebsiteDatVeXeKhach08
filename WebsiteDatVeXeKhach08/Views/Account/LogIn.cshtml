@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "LogIn";
+}
+
+<h2>Đăng nhập</h2>
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+<form method="post" asp-action="Login">
+    <div>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="Username" required />
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="Password" required />
+    </div>
+    <button type="submit">Login</button>
+    <div>
+        @Html.ActionLink("Create Account", "SignUp")
+    </div>
+</form>
+

@@ -1,0 +1,48 @@
+﻿@model List<WebsiteDatVeXeKhach08.Bus>
+
+@{
+    ViewBag.Title = "SearchBusByDate";
+}
+
+<h2>Tìm kiếm chuyến xe còn trống theo ngày</h2>
+@using (Html.BeginForm("SearchBusByDate", "Customer", FormMethod.Get))
+{
+
+    <input type="date" id="searchDate" name="searchDate" value="@ViewBag.SearchDate.ToString("dd/MM/yyyy")" class="form-control" />
+    <button type="submit" class="btn btn-primary">Search</button>
+}
+
+@if (Model.Any())
+{
+    <h3>Các xe còn trống @ViewBag.SearchDate.ToString("dd/MM/yyyy")</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Route ID</th>
+                <th>Bus Number</th>
+                <th>Departure Time</th>
+                <th>Arrival Time</th>
+                <th>Total Seats</th>
+                <th>Available Seats</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var bus in Model)
+            {
+                <tr>
+                    <td>@bus.Route.RouteName</td>
+                    <td>@bus.BusNumber</td>
+                    <td>@bus.DepartureTime</td>
+                    <td>@bus.ArrivalTime</td>
+                    <td>@bus.TotalSeats</td>
+                    <td>@bus.AvailableSeats</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h4>Không còn chuyến nào trống</h4>
+}
+

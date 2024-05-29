@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WebsiteDatVeXeKhach08.Bus>
+
+@{
+    ViewBag.Title = "ListBuses";
+}
+
+<h2>ListBuses</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateBus")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RouteID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BusNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartureTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArrivalTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalSeats)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AvailableSeats)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Route.RouteName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BusNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartureTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArrivalTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalSeats)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AvailableSeats)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditBus", new { id=item.BusID }) |
+            @Html.ActionLink("Details", "DetailsBus", new { id=item.BusID }) |
+            @Html.ActionLink("Delete", "DeleteBus", new { id=item.BusID })
+        </td>
+    </tr>
+}
+
+</table>

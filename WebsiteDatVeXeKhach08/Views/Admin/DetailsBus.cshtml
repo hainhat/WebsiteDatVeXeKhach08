@@ -1,0 +1,66 @@
+﻿@model WebsiteDatVeXeKhach08.Bus
+
+@{
+    ViewBag.Title = "DetailsBus";
+}
+
+<h2>DetailsBus</h2>
+
+<div>
+    <h4>Bus</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RouteID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Route.RouteName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BusNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BusNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartureTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartureTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrivalTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrivalTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalSeats)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalSeats)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AvailableSeats)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AvailableSeats)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BusID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
