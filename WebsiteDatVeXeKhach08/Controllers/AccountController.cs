@@ -18,6 +18,7 @@ namespace WebsiteDatVeXeKhach08.Controllers
         public ActionResult LogIn(string username, string password)
         {
             User loggedInUser = db.Users.SingleOrDefault(u => u.Username == username && u.Password == password);
+            
             if (loggedInUser.RoleID == 1)
             {
                 Session["FullName"] = loggedInUser.FullName;

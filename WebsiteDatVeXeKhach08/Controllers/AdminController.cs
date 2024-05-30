@@ -366,7 +366,7 @@ namespace WebsiteDatVeXeKhach08.Controllers
                                 else
                                 {
                                     db.Tickets.Add(t);
-                                    t.StatusID = 2;
+                                    t.StatusID = null;
                                     t.BookingDate = DateTime.Now;
                                     db.SaveChanges();
                                     transaction.Commit();
@@ -597,14 +597,14 @@ namespace WebsiteDatVeXeKhach08.Controllers
                 try
                 {
                     var payment = db.Payments.FirstOrDefault(p => p.PaymentID == id);
-                    db.Payments.Remove(payment);
-                    db.SaveChanges();
                     var ticket = db.Tickets.FirstOrDefault(t => t.TicketID == payment.TicketID);
-                    if (ticket != null)
+                    if (ticket.StatusID == 2)
                     {
                         ticket.StatusID = null;
-                        db.SaveChanges();
+
                     }
+                    db.Payments.Remove(payment);
+                    db.SaveChanges();
                     transaction.Commit();   
                     return RedirectToAction("ListPayment");
                 }

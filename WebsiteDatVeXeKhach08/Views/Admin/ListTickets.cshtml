@@ -44,7 +44,7 @@
             @Html.DisplayFor(modelItem => item.BookingDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.StatusID)
+            @Html.DisplayFor(modelItem => item.TicketStatus.StatusName)
         </td>
         <td>
             @Html.ActionLink("Edit", "EditTicket", new { id=item.TicketID }) |

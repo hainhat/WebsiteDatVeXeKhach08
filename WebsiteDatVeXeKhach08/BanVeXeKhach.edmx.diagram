@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="BanVeXeKhachModel.PaymentMethod" Width="1.5" PointX="5.25" PointY="5.625" />
         <EntityTypeShape EntityType="BanVeXeKhachModel.Payment" Width="1.5" PointX="7.5" PointY="1.375" />
         <EntityTypeShape EntityType="BanVeXeKhachModel.Route" Width="1.5" PointX="0.75" PointY="1.375" />
-        <EntityTypeShape EntityType="BanVeXeKhachModel.sysdiagram" Width="1.5" PointX="7.75" PointY="4.75" />
+        <EntityTypeShape EntityType="BanVeXeKhachModel.sysdiagram" Width="1.5" PointX="9.375" PointY="5" />
         <EntityTypeShape EntityType="BanVeXeKhachModel.Ticket" Width="1.5" PointX="5.25" PointY="1" />
         <EntityTypeShape EntityType="BanVeXeKhachModel.TicketStatus" Width="1.5" PointX="3" PointY="4.75" />
         <EntityTypeShape EntityType="BanVeXeKhachModel.UserRole" Width="1.5" PointX="0.75" PointY="7.75" />
